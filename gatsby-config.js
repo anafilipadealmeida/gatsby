@@ -40,5 +40,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: require(`${__dirname}/src/styles/theme.ts`).lightTheme,
+        dark: require(`${__dirname}/src/styles/theme.ts`).darkTheme,
+      },
+    },
   ],
 }

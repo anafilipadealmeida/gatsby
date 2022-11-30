@@ -5,8 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import "@fontsource/montserrat"
+import "@fontsource/lora"
+import { GlobalStyle } from "../styles/theme"
+import styled, { ThemeContext } from "styled-components"
 
 import Header from "./header"
 import "./layout.css"
@@ -21,9 +25,11 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const theme = useContext(ThemeContext)
 
   return (
     <>
+      <GlobalStyle theme={theme} />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{

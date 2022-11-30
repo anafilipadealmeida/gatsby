@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     background-color: ${props => props.theme.backgroundColor};
