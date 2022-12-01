@@ -64,6 +64,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     color: ${props => props.theme.primaryColor};
   }
+
+  button {
+    outline: none;
+    text-decoration: none;
+  }
 `
 
 module.exports = {
