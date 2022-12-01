@@ -13,8 +13,7 @@ import { GlobalStyle } from "../styles/theme"
 import styled, { ThemeContext } from "styled-components"
 
 import Footer from "./Footer"
-
-import Header from "./header"
+import Header from "./Header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
