@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Hero from "../components/Hero"
+import Quote from "../components/Quote"
 import Story from "../components/Story"
 
 const LayoutWrapper = styled.div`
@@ -23,10 +24,21 @@ const LayoutWrapper = styled.div`
   }
 `
 
+const Divider = styled.div`
+  width: 80px;
+  height: 4px;
+  background: ${props => props.theme.accentColor};
+  margin: 0 auto;
+  border-radius: 6px;
+`
+
 const IndexPage = () => (
   <Layout>
     <LayoutWrapper alignItems="center">
       <Hero title="Hero" />
+      <Divider />
+      <Quote title="Quote" />
+      <Divider />
       <Story title="Story" />
     </LayoutWrapper>
   </Layout>
