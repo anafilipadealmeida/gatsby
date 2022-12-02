@@ -4,4 +4,5 @@ module.exports = {
   grayDark: "#333333",
   grayMedium: "#706c61",
   white: "#ffffff",
+  pink: "#e32652",
 }

@@ -1,15 +1,21 @@
-const { white, black, grayDark } = require("./colors.ts")
+const { white, black, grayDark, pink } = require("./colors.ts")
 const styledComponents = require("styled-components")
 const { createGlobalStyle } = styledComponents
 
 const lightTheme = {
   backgroundColor: white,
   primaryColor: grayDark,
+  accentColor: pink,
+  linkColor: grayDark,
+  linkHoverColor: grayDark,
 }
 
 const darkTheme = {
-  backgroundColor: grayDark,
+  backgroundColor: black,
   primaryColor: white,
+  accentColor: pink,
+  linkColor: white,
+  linkHoverColor: white,
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -36,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Antonio', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     background-color: ${props => props.theme.backgroundColor};
@@ -46,28 +52,66 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin: 0;
-    font-weight: 700;
-    font-size: 2.75rem;
+    font-weight: 900;
+    font-size: 3.5rem;
     color: ${props => props.theme.primaryColor};
+    text-transform: uppercase;
   }
 
   h2 {
-    margin: 0 0 2.5rem;
+    margin: 0 0 2.625rem;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: ${props => props.theme.primaryColor};
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0 0 2.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: ${props => props.theme.primaryColor};
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin: 2.5rem 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: ${props => props.theme.accentColor};
+    text-transform: uppercase;
   }
 
   p {
-    margin: 0 0 1rem;
-    font-weight: 300;
-    font-size: 1.5rem;
+    margin: 0 0 2rem;
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 1.75rem;
     color: ${props => props.theme.primaryColor};
   }
 
   button {
     outline: none;
     text-decoration: none;
+    border: 0;
+  }
+
+  ul {
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    color: ${props => props.theme.linkColor};
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    &:hover {
+      color: ${props => props.theme.linkHoverColor};
+    }
+    &:visited {
+      color: ${props => props.theme.linkHoverColor};
+    }
   }
 `
 
