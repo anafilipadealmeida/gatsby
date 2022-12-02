@@ -3,22 +3,25 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import NavBar from "./Navbar"
+import Burger from "./Burger"
 
 const HeaderWrapper = styled.header`
-  padding: 1rem 0;
   display: flex;
   align-items: center;
 `
 
-const SiteTitle = styled.h1`
+const SiteTitle = styled.h2`
   padding-left: 1rem;
-  a {
-    text-decoration: none;
-    display: flex;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: ${props => props.theme.primaryColor};
-  }
+  margin: 0;
+`
+
+const Nav = styled.nav`
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 type HeaderProps = {
@@ -27,10 +30,12 @@ type HeaderProps = {
 
 const Header = ({ siteTitle }: HeaderProps) => (
   <HeaderWrapper>
-    <NavBar />
-    <SiteTitle>
-      <Link to="/">{siteTitle}</Link>
-    </SiteTitle>
+    <Nav>
+      <SiteTitle>
+        <Link to="/">{siteTitle}</Link>
+      </SiteTitle>
+      <Burger />
+    </Nav>
   </HeaderWrapper>
 )
 
