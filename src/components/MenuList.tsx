@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { device } from "../styles/device"
 
-const NavList = styled.ul`
+const NavList = styled.ul<MenuListProps>`
   display: flex;
   flex-flow: row nowrap;
   li {
@@ -27,39 +28,21 @@ const NavList = styled.ul`
   }
 `
 
-const MenuList = ({ isMenuOpen }) => {
+type MenuListProps = {
+  isMenuOpen: boolean
+}
+
+const MenuList = ({ isMenuOpen }: MenuListProps) => {
   return (
     <NavList isMenuOpen={isMenuOpen}>
       <li>
-        <Link
-          to="/story"
-          style={{
-            textDecoration: `none`,
-          }}
-          activeStyle={{ textDecoration: "underline" }}
-        >
-          story
-        </Link>
+        <AnchorLink to="/#story">story</AnchorLink>
       </li>
       <li>
-        <Link
-          to="/work"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
-          work
-        </Link>
+        <AnchorLink to="/#hero">hero</AnchorLink>
       </li>
       <li>
-        <Link
-          to="/values"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
-          values
-        </Link>
+        <AnchorLink to="/#values">values</AnchorLink>
       </li>
     </NavList>
   )
