@@ -1,5 +1,4 @@
 import * as React from "react"
-import { device } from "../styles/device"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -24,7 +23,7 @@ const RightSide = styled.div`
   width: 50%;
 `
 
-const Story = () => (
+const Quote = () => (
   <Container>
     <LeftSide>
       <h2>"why was I born if i can't do what I want?"</h2>
@@ -36,4 +35,4 @@ const Story = () => (
   </Container>
 )
 
-export default Story
+export default Quote
