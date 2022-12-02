@@ -21,7 +21,7 @@ const BurgerContainer = styled.button`
   }
 `
 
-const BurgerLine = styled.div`
+const BurgerLine = styled.div<BurgerProps>`
   width: 2rem;
   height: 0.25rem;
   background-color: ${props => props.theme.primaryColor};
@@ -43,15 +43,18 @@ const BurgerLine = styled.div`
   }
 `
 
+type BurgerProps = {
+  isMenuOpen?: boolean
+}
+
 const Burger = () => {
   const [isMenuOpen, openMenu] = useState(false)
 
   return (
     <FocusLock isLocked={isMenuOpen}>
       <BurgerContainer
-        aria-label="Open navigation"
+        aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={isMenuOpen}
-        isMenuOpen={isMenuOpen}
         onClick={() => openMenu(!isMenuOpen)}
       >
         <BurgerLine isMenuOpen={isMenuOpen} />

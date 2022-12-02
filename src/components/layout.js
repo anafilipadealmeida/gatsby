@@ -14,7 +14,12 @@ import styled, { ThemeContext } from "styled-components"
 
 import Footer from "./Footer"
 import Header from "./Header"
-import "./layout.css"
+
+const Wrapper = styled.span`
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,18 +34,19 @@ const Layout = ({ children }) => {
   const theme = useContext(ThemeContext)
 
   return (
-    <>
+    <Wrapper>
       <GlobalStyle theme={theme} />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
+          flex: "1 0",
         }}
       >
         <main>{children}</main>
       </div>
       <Footer />
-    </>
+    </Wrapper>
   )
 }
 

@@ -2,7 +2,8 @@ import * as React from "react"
 import styled from "styled-components"
 
 const FooterLabel = styled.p`
-  font-size: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
 `
 
 const Footer = () => {
