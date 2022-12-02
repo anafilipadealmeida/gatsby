@@ -39,7 +39,7 @@ const MenuList = ({ isMenuOpen }: MenuListProps) => {
         <AnchorLink to="/#story">story</AnchorLink>
       </li>
       <li>
-        <AnchorLink to="/#hero">hero</AnchorLink>
+        <AnchorLink to="/#work">work</AnchorLink>
       </li>
       <li>
         <AnchorLink to="/#values">values</AnchorLink>

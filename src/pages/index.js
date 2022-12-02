@@ -9,6 +9,7 @@ import Hero from "../components/Hero"
 import Quote from "../components/Quote"
 import Story from "../components/Story"
 import Statement from "../components/Statement"
+import Work from "../components/Work"
 
 const LayoutWrapper = styled.div`
   margin-top: 67vh;
@@ -42,6 +43,7 @@ const IndexPage = () => (
       <Divider />
       <Story title="Story" />
       <Statement />
+      <Work />
     </LayoutWrapper>
   </Layout>
 )
