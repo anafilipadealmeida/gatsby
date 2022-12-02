@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { device } from "../styles/device"
+import FocusLock from "./FocusLock"
+import MenuList from "./MenuList"
 
 const BurgerContainer = styled.button`
   cursor: pointer;
@@ -45,8 +47,10 @@ const Burger = () => {
   const [isMenuOpen, openMenu] = useState(false)
 
   return (
-    <>
+    <FocusLock isLocked={isMenuOpen}>
       <BurgerContainer
+        aria-label="Open navigation"
+        aria-expanded={isMenuOpen}
         isMenuOpen={isMenuOpen}
         onClick={() => openMenu(!isMenuOpen)}
       >
@@ -54,7 +58,8 @@ const Burger = () => {
         <BurgerLine isMenuOpen={isMenuOpen} />
         <BurgerLine isMenuOpen={isMenuOpen} />
       </BurgerContainer>
-    </>
+      <MenuList isMenuOpen={isMenuOpen} />
+    </FocusLock>
   )
 }
 
