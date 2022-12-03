@@ -8,6 +8,17 @@ const lightTheme = {
   accentColor: pink,
   linkColor: grayDark,
   linkHoverColor: grayDark,
+  darkModeSwitcher: {
+    iconColor: black,
+    backgroundColor: white,
+    backgroundHoverColor: pink,
+    knobColor: black,
+  },
+  switcher: {
+    backgroundColor: white,
+    backgroundHoverColor: pink,
+    knobColor: black,
+  },
 }
 
 const darkTheme = {
@@ -16,6 +27,17 @@ const darkTheme = {
   accentColor: pink,
   linkColor: white,
   linkHoverColor: white,
+  darkModeSwitcher: {
+    iconColor: white,
+    backgroundColor: black,
+    backgroundHoverColor: pink,
+    knobColor: white,
+  },
+  switcher: {
+    backgroundColor: black,
+    backgroundHoverColor: pink,
+    knobColor: white,
+  },
 }
 
 const GlobalStyle = createGlobalStyle`
