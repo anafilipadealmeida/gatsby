@@ -7,7 +7,7 @@ const Container = styled.section`
   height: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 60px 0;
+  padding: 120px 0;
   box-sizing: border-box;
 `
 
@@ -16,7 +16,7 @@ const Title = styled.h2`
 `
 
 const Card = styled.div`
-  border: 1px solid ${props => props.theme.accentColor};
+  border: 1px solid ${props => props.theme.primaryColor};
   margin: 25px;
   padding: 20px;
 `

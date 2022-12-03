@@ -37,7 +37,7 @@ const Row = styled.div`
 `
 
 const ContentContainer = styled.div`
-  padding: 60px 140px;
+  padding: 100px 140px;
 `
 
 const Overlay = styled.div`
