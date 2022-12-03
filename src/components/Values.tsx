@@ -24,7 +24,6 @@ const Card = styled.div`
 const ColumnTitle = styled.p`
   text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
   padding: 20px;
   margin: 0;
   background: ${props => props.theme.backgroundColor};

@@ -27,12 +27,10 @@ const ColumnTitle = styled.h4`
 `
 
 const ColumnContent = styled.p`
-  text-transform: uppercase;
   text-align: center;
-  font-size: 2rem;
-  font-weight: 300;
   padding: 0 2rem;
   line-height: 2.5rem;
+  margin-bottom: 2.5rem;
 `
 
 const Story = () => (
@@ -41,8 +39,7 @@ const Story = () => (
     <Column>
       <ColumnTitle>How it all started</ColumnTitle>
       <ColumnContent>
-        With the question to my parents when I was 4. <br />
-        They panicked.
+        With the question to my parents when I was 4. They panicked.
       </ColumnContent>
     </Column>
     <Column>
@@ -53,12 +50,7 @@ const Story = () => (
     </Column>
     <Column>
       <ColumnTitle>What I did</ColumnTitle>
-      <ColumnContent>
-        Content, <br />
-        Product, <br />
-        Engineering, <br />
-        Management.
-      </ColumnContent>
+      <ColumnContent>Content, Product, Engineering, Management.</ColumnContent>
     </Column>
   </Container>
 )
