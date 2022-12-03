@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin: 0;
     font-weight: 900;
-    font-size: 3.5rem;
+    font-size: 5.5rem;
     color: ${props => props.theme.primaryColor};
     text-transform: uppercase;
   }

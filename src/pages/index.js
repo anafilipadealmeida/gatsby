@@ -14,18 +14,7 @@ import Values from "../components/Values"
 import Hobbies from "../components/Hobbies"
 
 const LayoutWrapper = styled.div`
-  margin-top: 67vh;
   position: relative;
-
-  @media ${device.small} {
-    margin-left: 45vw;
-    margin-top: 0;
-  }
-
-  @media ${device.medium} {
-    margin-left: 45rem;
-    margin-top: 0;
-  }
 `
 
 const Divider = styled.div`
