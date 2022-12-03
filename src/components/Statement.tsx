@@ -13,7 +13,7 @@ const Title = styled.h4`
   color: ${props => props.theme.primaryColor};
   font-weight: 200;
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 2.5rem;
   text-transform: none;
 `

@@ -35,6 +35,7 @@ const Wrapper = styled.div`
 const HelloText = styled.p`
   text-transform: uppercase;
   font-size: 5.5rem;
+  padding-bottom: 2rem;
 `
 
 const TextContainer = styled.div`
@@ -59,6 +60,15 @@ const SocialIcon = styled.a`
       color: ${props => props.theme.accentColor};
     }
   }
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: ${props => props.theme.backgroundColor};
+  opacity: 0.3;
+  z-index: -1;
 `
 
 const Hero = () => (
@@ -97,6 +107,7 @@ const Hero = () => (
           zIndex: "-1",
         }}
       />
+      <Overlay />
     </RightSide>
   </Wrapper>
 )

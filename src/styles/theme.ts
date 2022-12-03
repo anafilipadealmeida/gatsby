@@ -83,9 +83,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin: 0 0 2rem;
+    margin: 0;
     font-weight: 200;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.75rem;
     color: ${props => props.theme.primaryColor};
   }

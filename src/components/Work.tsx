@@ -30,6 +30,7 @@ const LeftSide = styled.div`
 const RightSide = styled.div`
   width: 60%;
   display: inline-block;
+  vertical-align: middle;
 `
 
 const DateLabel = styled.p`
