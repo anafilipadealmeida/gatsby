@@ -7,15 +7,7 @@ const Container = styled.section`
   width: 100%;
   height: 100%
   margin: 0;
-  height: 100%;
-  align-items: center;
-  height: 100%;
   position: relative;
-`
-
-const LeftSide = styled.div`
-  width: 50%;
-  padding-top: 100px;
 `
 
 const Overlay = styled.div`
@@ -33,9 +25,8 @@ const Card = styled.div`
 `
 
 const TitleWrapper = styled.div`
-  width: 62%;
   margin: 0 auto;
-  padding: 140px 0;
+  padding: 8.75rem 0;
   position: relative;
 `
 
@@ -53,14 +44,6 @@ const Quote = () => (
     />
     <Overlay />
     <TitleWrapper>
-      <StaticImage
-        alt="tiles"
-        src="../images/child_ana.png"
-        style={{
-          position: "absolute",
-          right: "-26px",
-        }}
-      />
       <Card>
         <h2>"why was I born if i can't do what I want?"</h2>
         <p>- Ana, 4 years old</p>
