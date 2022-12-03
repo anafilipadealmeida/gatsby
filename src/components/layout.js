@@ -7,8 +7,8 @@
 
 import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import "@fontsource/montserrat"
-import "@fontsource/lora"
+import "@fontsource/antonio/variable.css"
+
 import { GlobalStyle } from "../styles/theme"
 import styled, { ThemeContext } from "styled-components"
 
@@ -39,7 +39,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
-          margin: `0 auto`,
           flex: "1 0",
         }}
       >

@@ -5,8 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@fontsource/lora": "^4.5.12",
-    "@fontsource/montserrat": "^4.5.13",
+    "@fontsource/antonio": "^4.5.9",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
