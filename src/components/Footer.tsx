@@ -4,6 +4,7 @@ import styled from "styled-components"
 const FooterLabel = styled.p`
   text-align: center;
   font-size: 0.875rem;
+  margin: 3rem 0;
 `
 
 const Footer = () => {
