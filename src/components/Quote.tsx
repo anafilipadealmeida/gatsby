@@ -4,8 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.section`
   display: flex;
-  width: 100%;
-  height: 100%
+  height: 100%;
   margin: 0;
   position: relative;
 `
@@ -27,13 +26,12 @@ const Card = styled.div`
 const TitleWrapper = styled.div`
   margin: 0 auto;
   padding: 8.75rem 0;
-  position: relative;
 `
 
 const Quote = () => (
   <Container>
     <StaticImage
-      alt="tiles"
+      alt=""
       src="../images/tiles.jpeg"
       style={{
         position: "absolute",
