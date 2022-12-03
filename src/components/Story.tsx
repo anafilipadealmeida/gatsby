@@ -7,7 +7,7 @@ const Container = styled.section`
   height: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 60px 0;
+  padding: 100px 0;
   box-sizing: border-box;
 `
 
@@ -17,7 +17,7 @@ const Title = styled.h2`
 
 const Column = styled.div`
   width: calc(100% / 3 - 52px);
-  border: 1px solid ${props => props.theme.accentColor};
+  border: 1px solid ${props => props.theme.primaryColor};
   display: inline-block;
   margin: 25px;
 `
