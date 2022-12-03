@@ -21,7 +21,7 @@ const Divider = styled.div`
   width: 80px;
   height: 4px;
   background: ${props => props.theme.accentColor};
-  margin: 0 auto;
+  margin: 2rem auto;
   border-radius: 6px;
 `
 
@@ -33,9 +33,13 @@ const IndexPage = () => (
       <Quote title="Quote" />
       <Divider />
       <Story title="Story" />
+      <Divider />
       <Statement />
+      <Divider />
       <Work />
+      <Divider />
       <Values title="Values" />
+      <Divider />
       <Hobbies title="Hobbies" />
     </LayoutWrapper>
   </Layout>

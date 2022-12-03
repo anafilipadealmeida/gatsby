@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import NavBar from "./Navbar"
 import Burger from "./Burger"
 
 const HeaderWrapper = styled.header`
@@ -17,6 +16,7 @@ const HeaderWrapper = styled.header`
 const SiteTitle = styled.h2`
   padding-left: 1rem;
   margin: 0;
+  font-size: 1.5rem;
 `
 
 const Nav = styled.nav`

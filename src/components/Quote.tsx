@@ -5,13 +5,12 @@ import { StaticImage } from "gatsby-plugin-image"
 const Container = styled.section`
   display: flex;
   width: 100%;
-  height: 100%;
-  max-width: 1400px;
-  margin: auto;
-  padding: 60px 0;
-  box-sizing: border-box;
+  height: 100%
+  margin: 0;
   height: 100%;
   align-items: center;
+  height: 100%;
+  position: relative;
 `
 
 const LeftSide = styled.div`
@@ -19,19 +18,54 @@ const LeftSide = styled.div`
   padding-top: 100px;
 `
 
-const RightSide = styled.div`
-  width: 50%;
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: ${props => props.theme.backgroundColor};
+  opacity: 0.65;
+  z-index: -1;
+`
+
+const Card = styled.div`
+  background: ${props => props.theme.backgroundColor};
+  padding: 2.5rem;
+`
+
+const TitleWrapper = styled.div`
+  width: 62%;
+  margin: 0 auto;
+  padding: 140px 0;
+  position: relative;
 `
 
 const Quote = () => (
   <Container>
-    <LeftSide>
-      <h2>"why was I born if i can't do what I want?"</h2>
-      <p>- Ana, 4 years old</p>
-    </LeftSide>
-    <RightSide>
-      <StaticImage alt="child" src="../images/ana_child.jpg" />
-    </RightSide>
+    <StaticImage
+      alt="tiles"
+      src="../images/tiles.jpeg"
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        zIndex: "-1",
+      }}
+    />
+    <Overlay />
+    <TitleWrapper>
+      <StaticImage
+        alt="tiles"
+        src="../images/child_ana.png"
+        style={{
+          position: "absolute",
+          right: "-26px",
+        }}
+      />
+      <Card>
+        <h2>"why was I born if i can't do what I want?"</h2>
+        <p>- Ana, 4 years old</p>
+      </Card>
+    </TitleWrapper>
   </Container>
 )
 

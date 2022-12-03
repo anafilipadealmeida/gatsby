@@ -85,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin: 0 0 2rem;
     font-weight: 200;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.75rem;
     color: ${props => props.theme.primaryColor};
   }

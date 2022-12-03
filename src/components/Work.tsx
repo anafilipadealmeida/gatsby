@@ -7,7 +7,7 @@ const Container = styled.section`
   height: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 120px 0;
+  padding: 80px 0;
   box-sizing: border-box;
 `
 
@@ -41,7 +41,6 @@ const DateLabel = styled.p`
 
 const CompanyLabel = styled.p`
   text-transform: uppercase;
-  font-size: 1.125rem;
   margin: 20px 0;
 `
 
@@ -51,10 +50,6 @@ const RoleLabel = styled.p`
   color: ${props => props.theme.accentColor};
   font-weight: 600;
   margin: 0;
-`
-
-const Description = styled.p`
-  font-size: 1.125rem;
 `
 
 const Work = () => (
@@ -67,10 +62,10 @@ const Work = () => (
         <RoleLabel>Senior Engineering Manager</RoleLabel>
       </LeftSide>
       <RightSide>
-        <Description>
+        <p>
           Managing the two teams responsible for the Telepresence and Ambassador
           Cloud products.
-        </Description>
+        </p>
       </RightSide>
     </Card>
     <Card>
@@ -80,10 +75,10 @@ const Work = () => (
         <RoleLabel>Engineering Manager</RoleLabel>
       </LeftSide>
       <RightSide>
-        <Description>
+        <p>
           Managing the Webapp team, responsible for the tools that generate most
           of the $20M revenue.
-        </Description>
+        </p>
       </RightSide>
     </Card>
     <Card>
@@ -93,10 +88,10 @@ const Work = () => (
         <RoleLabel>Senior Front-End Engineer</RoleLabel>
       </LeftSide>
       <RightSide>
-        <Description>
+        <p>
           Leading the FE tech discussions and ship great features in the
           Publishing product.
-        </Description>
+        </p>
       </RightSide>
     </Card>
   </Container>
