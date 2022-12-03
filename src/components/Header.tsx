@@ -8,6 +8,10 @@ import Burger from "./Burger"
 const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
+  position: fixed;
+  background: ${props => props.theme.backgroundColor};
+  width: 100%;
+  z-index: 10;
 `
 
 const SiteTitle = styled.h2`

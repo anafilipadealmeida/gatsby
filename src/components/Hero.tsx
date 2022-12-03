@@ -25,7 +25,7 @@ const Description = styled.h3`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 55px);
+  height: 100vh;
   display: flex;
   align-items: center;
 `
