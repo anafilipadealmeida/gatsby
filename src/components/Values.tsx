@@ -1,13 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.section`
   display: block;
   width: 100%;
   height: 100%;
-  padding: 60px 140px;
   box-sizing: border-box;
-  background-color: ${props => props.theme.accentColor};
+  position: relative;
 `
 
 const Title = styled.h2`
@@ -25,8 +25,10 @@ const Card = styled.div`
 const ColumnTitle = styled.p`
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
-  margin: 20px;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0;
+  background: ${props => props.theme.backgroundColor};
 `
 
 const Row = styled.div`
@@ -34,37 +36,63 @@ const Row = styled.div`
   width: 100%;
 `
 
+const ContentContainer = styled.div`
+  padding: 60px 140px;
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: ${props => props.theme.backgroundColor};
+  opacity: 0.65;
+  z-index: -1;
+`
+
 const Values = () => (
   <Container id="values">
-    <Title>Things I value</Title>
-    <Row>
-      <Card>
-        <ColumnTitle>Be bold</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Default to action</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Pursue the truth</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Keep improving</ColumnTitle>
-      </Card>
-    </Row>
-    <Row>
-      <Card>
-        <ColumnTitle>Be transparent</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Empathise with users</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Empower others</ColumnTitle>
-      </Card>
-      <Card>
-        <ColumnTitle>Be kind & humble</ColumnTitle>
-      </Card>
-    </Row>
+    <StaticImage
+      alt="tiles"
+      src="../images/tiles.jpeg"
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        zIndex: "-1",
+      }}
+    />
+    <Overlay />
+    <ContentContainer>
+      <Title>Things I value</Title>
+      <Row>
+        <Card>
+          <ColumnTitle>Be bold</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Default to action</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Pursue the truth</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Keep improving</ColumnTitle>
+        </Card>
+      </Row>
+      <Row>
+        <Card>
+          <ColumnTitle>Be transparent</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Empathise with users</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Empower others</ColumnTitle>
+        </Card>
+        <Card>
+          <ColumnTitle>Be kind & humble</ColumnTitle>
+        </Card>
+      </Row>
+    </ContentContainer>
   </Container>
 )
 
