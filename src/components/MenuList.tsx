@@ -44,6 +44,9 @@ const MenuList = ({ isMenuOpen }: MenuListProps) => {
       <li>
         <AnchorLink to="/#values">values</AnchorLink>
       </li>
+      <li>
+        <AnchorLink to="/#hobbies">hobbies</AnchorLink>
+      </li>
     </NavList>
   )
 }

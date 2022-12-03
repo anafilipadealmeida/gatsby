@@ -11,6 +11,7 @@ import Story from "../components/Story"
 import Statement from "../components/Statement"
 import Work from "../components/Work"
 import Values from "../components/Values"
+import Hobbies from "../components/Hobbies"
 
 const LayoutWrapper = styled.div`
   margin-top: 67vh;
@@ -46,6 +47,7 @@ const IndexPage = () => (
       <Statement />
       <Work />
       <Values title="Values" />
+      <Hobbies title="Hobbies" />
     </LayoutWrapper>
   </Layout>
 )
