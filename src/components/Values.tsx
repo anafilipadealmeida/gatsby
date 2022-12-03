@@ -16,7 +16,6 @@ const Title = styled.h2`
 
 const Card = styled.div`
   width: calc(100% / 4 - 52px);
-  border: 1px solid ${props => props.theme.primaryColor};
   display: inline-block;
   vertical-align: middle;
   margin: 25px;
