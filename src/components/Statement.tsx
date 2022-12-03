@@ -1,5 +1,4 @@
 import * as React from "react"
-import { device } from "../styles/device"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 

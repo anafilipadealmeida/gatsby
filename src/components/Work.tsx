@@ -1,14 +1,12 @@
 import * as React from "react"
 import styled from "styled-components"
+import { device } from "../styles/device"
 
 const Container = styled.section`
-  display: block;
-  width: 100%;
   height: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 80px 0;
-  box-sizing: border-box;
+  padding: 5rem 0;
 `
 
 const Title = styled.h2`
@@ -21,16 +19,22 @@ const Card = styled.div`
   padding: 20px;
 `
 
-const LeftSide = styled.div`
+const Column = styled.div`
   width: 40%;
   display: inline-block;
   vertical-align: middle;
+
+  @media ${device.extraSmall} {
+    width: 100%;
+  }
 `
 
-const RightSide = styled.div`
+const RightColumn = styled(Column)`
   width: 60%;
-  display: inline-block;
-  vertical-align: middle;
+
+  @media ${device.extraSmall} {
+    width: 100%;
+  }
 `
 
 const DateLabel = styled.p`
@@ -57,43 +61,43 @@ const Work = () => (
   <Container id="work">
     <Title>My last jobs</Title>
     <Card>
-      <LeftSide>
+      <Column>
         <DateLabel>Current</DateLabel>
         <CompanyLabel>Ambassador Labs</CompanyLabel>
         <RoleLabel>Senior Engineering Manager</RoleLabel>
-      </LeftSide>
-      <RightSide>
+      </Column>
+      <RightColumn>
         <p>
           Managing the two teams responsible for the Telepresence and Ambassador
           Cloud products.
         </p>
-      </RightSide>
+      </RightColumn>
     </Card>
     <Card>
-      <LeftSide>
+      <Column>
         <DateLabel>2021</DateLabel>
         <CompanyLabel>Buffer</CompanyLabel>
         <RoleLabel>Engineering Manager</RoleLabel>
-      </LeftSide>
-      <RightSide>
+      </Column>
+      <RightColumn>
         <p>
           Managing the Webapp team, responsible for the tools that generate most
           of the $20M revenue.
         </p>
-      </RightSide>
+      </RightColumn>
     </Card>
     <Card>
-      <LeftSide>
+      <Column>
         <DateLabel>2018-2021</DateLabel>
         <CompanyLabel>Buffer</CompanyLabel>
         <RoleLabel>Senior Front-End Engineer</RoleLabel>
-      </LeftSide>
-      <RightSide>
+      </Column>
+      <RightColumn>
         <p>
           Leading the FE tech discussions and ship great features in the
           Publishing product.
         </p>
-      </RightSide>
+      </RightColumn>
     </Card>
   </Container>
 )
