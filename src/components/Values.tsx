@@ -1,24 +1,16 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { device } from "../styles/device"
 
 const Container = styled.section`
   display: block;
-  width: 100%;
   height: 100%;
-  box-sizing: border-box;
   position: relative;
 `
 
 const Title = styled.h2`
   text-align: center;
-`
-
-const Card = styled.div`
-  width: calc(100% / 4 - 52px);
-  display: inline-block;
-  vertical-align: middle;
-  margin: 25px;
 `
 
 const ColumnTitle = styled.p`
@@ -27,15 +19,28 @@ const ColumnTitle = styled.p`
   padding: 20px;
   margin: 0;
   background: ${props => props.theme.backgroundColor};
+
+  @media ${device.extraSmall} {
+    padding: 10px;
+  }
 `
 
-const Row = styled.div`
-  margin: 0 auto;
+const Grid = styled.div`
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+
+  @media ${device.extraSmall} {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 `
 
 const ContentContainer = styled.div`
-  padding: 100px 140px;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 6.25rem 25px;
+  width: calc(100% - 50px);
 `
 
 const Overlay = styled.div`
@@ -62,34 +67,16 @@ const Values = () => (
     <Overlay />
     <ContentContainer>
       <Title>Things I value</Title>
-      <Row>
-        <Card>
-          <ColumnTitle>Be bold</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Default to action</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Pursue the truth</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Keep improving</ColumnTitle>
-        </Card>
-      </Row>
-      <Row>
-        <Card>
-          <ColumnTitle>Be transparent</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Empathise with users</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Empower others</ColumnTitle>
-        </Card>
-        <Card>
-          <ColumnTitle>Be kind & humble</ColumnTitle>
-        </Card>
-      </Row>
+      <Grid>
+        <ColumnTitle>Be bold</ColumnTitle>
+        <ColumnTitle>Default to action</ColumnTitle>
+        <ColumnTitle>Pursue the truth</ColumnTitle>
+        <ColumnTitle>Keep improving</ColumnTitle>
+        <ColumnTitle>Be transparent</ColumnTitle>
+        <ColumnTitle>Empathise with users</ColumnTitle>
+        <ColumnTitle>Empower others</ColumnTitle>
+        <ColumnTitle>Be kind & humble</ColumnTitle>
+      </Grid>
     </ContentContainer>
   </Container>
 )
