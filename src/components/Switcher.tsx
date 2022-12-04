@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 export const SwitcherWrapper = styled.button`
   background: ${props => props.theme.switcher.backgroundColor};
-  border: 0.063rem solid ${props => props.theme.switcher.knobColor};
-  height: 1.75rem;
-  width: 3.5rem;
-  border-radius: 1rem;
+  border: 1px solid ${props => props.theme.switcher.knobColor};
+  height: 28px;
+  width: 56px;
+  border-radius: 16px;
   position: relative;
   cursor: pointer;
   &:hover {
@@ -19,12 +19,12 @@ export const SwitcherWrapper = styled.button`
 `
 export const SwitcherKnob = styled.span<SwitcherKnobProps>`
   position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   background: ${props => props.theme.switcher.knobColor};
-  border: 0.063rem solid ${props => props.theme.switcher.backgroundColor};
+  border: 1 solid ${props => props.theme.switcher.backgroundColor};
   border-radius: 50%;
-  left: ${props => (props.isOn ? "1.75rem" : "0")};
+  left: ${props => (props.isOn ? "28px" : "0")};
   transition: left 0.3s ease-out;
   top: 0;
   z-index: 1;

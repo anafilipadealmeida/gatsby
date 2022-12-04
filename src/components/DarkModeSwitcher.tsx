@@ -7,27 +7,26 @@ import { SwitcherWrapper, SwitcherKnob } from "./Switcher"
 
 const DarkModeStyles = css`
   background: ${props => props.theme.darkModeSwitcher.backgroundColor};
-  border: 0.063rem solid ${props => props.theme.darkModeSwitcher.knobColor};
+  border: 1px solid ${props => props.theme.darkModeSwitcher.knobColor};
 `
 
 const DarkModeKnobStyles = css`
-  border: 0.063rem solid
-    ${props => props.theme.darkModeSwitcher.backgroundColor};
+  border: 1px solid ${props => props.theme.darkModeSwitcher.backgroundColor};
   background: ${props => props.theme.darkModeSwitcher.knobColor};
 `
 
 const MoonIconWrapper = styled.span`
   position: absolute;
   color: ${props => props.theme.darkModeSwitcher.iconColor};
-  left: 0.5rem;
-  top: 0.35rem;
+  left: 8px;
+  top: 5px;
 `
 
 const SunIconWrapper = styled.span`
   position: absolute;
   color: ${props => props.theme.darkModeSwitcher.iconColor};
-  right: 0.5rem;
-  top: 0.35rem;
+  right: 8px;
+  top: 5px;
 `
 
 const DarkModeToggleSwitch = styled(SwitcherWrapper)`

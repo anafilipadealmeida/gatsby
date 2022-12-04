@@ -5,29 +5,24 @@ import DarkModeSwitcher from "./DarkModeSwitcher"
 const FooterLabel = styled.p`
   text-align: center;
   font-size: 0.875rem;
-  margin: 3rem 0;
-`
-
-const FooterWrapper = styled.footer`
-  position: relative;
+  margin: 3rem 0 0;
 `
 
 const SwitcherWrapper = styled.div`
-  right: 40px;
-  bottom: 40px;
-  position: absolute;
+  margin: 1rem 0 3rem;
+  text-align: center;
 `
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <footer>
       <FooterLabel>
         © {new Date().getFullYear()} &middot; Built with ♥ from Porto
       </FooterLabel>
       <SwitcherWrapper>
         <DarkModeSwitcher />
       </SwitcherWrapper>
-    </FooterWrapper>
+    </footer>
   )
 }
 
