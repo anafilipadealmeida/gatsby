@@ -1,26 +1,57 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { device } from "../styles/device"
 
 const Container = styled.section`
   display: flex;
-  width: 100%;
   height: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 60px 0;
-  box-sizing: border-box;
-  height: 100%;
+  padding: 3.75rem 0;
   align-items: center;
 `
 
 const LeftSide = styled.div`
   width: 40%;
-  padding: 100px 20px 0;
+  padding: 6.25rem 20px 0;
+
+  @media ${device.extraSmall} {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @media ${device.small} {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @media ${device.medium} {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
 `
 
 const RightSide = styled.div`
   width: 60%;
+
+  @media ${device.extraSmall} {
+    display: none;
+  }
+
+  @media ${device.small} {
+    display: none;
+  }
+
+  @media ${device.medium} {
+    display: none;
+  }
 `
 
 const Row = styled.div`
@@ -44,24 +75,24 @@ const Hobbies = () => (
     <RightSide>
       <Row>
         <ImageWrapper>
-          <StaticImage alt="pilates" src="../images/pilates.png" />
+          <StaticImage alt="" src="../images/pilates.png" />
         </ImageWrapper>
         <ImageWrapper>
-          <StaticImage alt="reading" src="../images/read.png" />
+          <StaticImage alt="" src="../images/read.png" />
         </ImageWrapper>
         <ImageWrapper>
-          <StaticImage alt="traveling" src="../images/travel.png" />
+          <StaticImage alt="" src="../images/travel.png" />
         </ImageWrapper>
       </Row>
       <Row>
         <ImageWrapper>
-          <StaticImage alt="blueberry tart" src="../images/bake.png" />
+          <StaticImage alt="" src="../images/bake.png" />
         </ImageWrapper>
         <ImageWrapper>
-          <StaticImage alt="flamingo" src="../images/photo.png" />
+          <StaticImage alt="" src="../images/photo.png" />
         </ImageWrapper>
         <ImageWrapper>
-          <StaticImage alt="cat" src="../images/cat.png" />
+          <StaticImage alt="" src="../images/cat.png" />
         </ImageWrapper>
       </Row>
     </RightSide>
