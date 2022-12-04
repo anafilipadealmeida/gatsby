@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import { device } from "../styles/device"
 
 const Container = styled.section`
   display: block;
@@ -20,6 +21,10 @@ const Column = styled.div`
   border: 1px solid ${props => props.theme.primaryColor};
   display: inline-block;
   margin: 25px;
+  box-sizing: border-box;
+  @media ${device.extraSmall} {
+    width: calc(100% - 50px);
+  }
 `
 
 const ColumnTitle = styled.h4`
@@ -50,7 +55,9 @@ const Story = () => (
     </Column>
     <Column>
       <ColumnTitle>What I did</ColumnTitle>
-      <ColumnContent>Content, Product, Engineering, Management.</ColumnContent>
+      <ColumnContent>
+        Content, PR, Product, Engineering, Management.
+      </ColumnContent>
     </Column>
   </Container>
 )
