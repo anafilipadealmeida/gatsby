@@ -11,7 +11,7 @@ const BurgerContainer = styled.button`
   height: 2rem;
   position: fixed;
   top: 15px;
-  right: 20px;
+  right: 25px;
   z-index: 20;
   display: none;
   @media ${device.extraSmall} {

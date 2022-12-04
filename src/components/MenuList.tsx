@@ -7,8 +7,10 @@ import { device } from "../styles/device"
 const NavList = styled.ul<MenuListProps>`
   display: flex;
   flex-flow: row nowrap;
+  text-align: center;
   li {
     padding: 18px 10px;
+    font-size: 16px;
   }
   @media ${device.extraSmall} {
     flex-flow: column nowrap;
@@ -19,7 +21,7 @@ const NavList = styled.ul<MenuListProps>`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 100%;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     li {

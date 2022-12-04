@@ -14,7 +14,6 @@ const HeaderWrapper = styled.header`
 `
 
 const SiteTitle = styled.h2`
-  padding-left: 1rem;
   margin: 0;
   font-size: 1.5rem;
 `
@@ -22,7 +21,7 @@ const SiteTitle = styled.h2`
 const Nav = styled.nav`
   width: 100%;
   height: 55px;
-  padding: 0 20px;
+  padding: 0 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
