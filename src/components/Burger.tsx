@@ -63,7 +63,7 @@ const Burger = () => {
         <BurgerLine isMenuOpen={isMenuOpen} />
         <BurgerLine isMenuOpen={isMenuOpen} />
       </BurgerContainer>
-      <MenuList isMenuOpen={isMenuOpen} />
+      <MenuList isMenuOpen={isMenuOpen} openMenu={openMenu} />
     </FocusLock>
   )
 }

@@ -32,22 +32,40 @@ const NavList = styled.ul<MenuListProps>`
 
 type MenuListProps = {
   isMenuOpen: boolean
+  openMenu: (sMenuOpen: boolean) => void
 }
 
-const MenuList = ({ isMenuOpen }: MenuListProps) => {
+const MenuList = ({ isMenuOpen, openMenu }: MenuListProps) => {
   return (
     <NavList isMenuOpen={isMenuOpen}>
       <li>
-        <AnchorLink to="/#story">story</AnchorLink>
+        <AnchorLink
+          to="/#story"
+          onAnchorLinkClick={() => openMenu(!isMenuOpen)}
+        >
+          story
+        </AnchorLink>
       </li>
       <li>
-        <AnchorLink to="/#work">work</AnchorLink>
+        <AnchorLink to="/#work" onAnchorLinkClick={() => openMenu(!isMenuOpen)}>
+          work
+        </AnchorLink>
       </li>
       <li>
-        <AnchorLink to="/#values">values</AnchorLink>
+        <AnchorLink
+          to="/#values"
+          onAnchorLinkClick={() => openMenu(!isMenuOpen)}
+        >
+          values
+        </AnchorLink>
       </li>
       <li>
-        <AnchorLink to="/#hobbies">hobbies</AnchorLink>
+        <AnchorLink
+          to="/#hobbies"
+          onAnchorLinkClick={() => openMenu(!isMenuOpen)}
+        >
+          hobbies
+        </AnchorLink>
       </li>
     </NavList>
   )
