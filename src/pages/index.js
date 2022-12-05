@@ -1,6 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { device } from "../styles/device"
 import styled from "styled-components"
 
 import Layout from "../components/layout"

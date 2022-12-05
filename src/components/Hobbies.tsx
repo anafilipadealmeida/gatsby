@@ -1,20 +1,26 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { useStyledDarkMode } from "gatsby-styled-components-dark-mode"
 import { device } from "../styles/device"
 
-const Container = styled.section`
-  display: flex;
+const Section = styled.section`
   height: 100%;
+  position: relative;
+`
+
+const Container = styled.div`
   max-width: 1400px;
   margin: auto;
-  padding: 3.75rem 0;
+  display: flex;
   align-items: center;
+  padding: 3.75rem 0;
 `
 
 const LeftSide = styled.div`
   width: 40%;
   padding: 6.25rem 20px 0;
+  z-index: 3;
 
   @media ${device.extraSmall} {
     width: 60%;
@@ -63,40 +69,95 @@ const ImageWrapper = styled.div`
   padding: 14px;
   display: inline-block;
 `
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: ${props => props.theme.overlayColor};
+  opacity: 0.65;
+  z-index: 1;
+`
 
-const Hobbies = () => (
-  <Container id="hobbies">
-    <LeftSide>
-      <h2>
-        Out of the office you'll find me doing pilates, reading, traveling,
-        baking, taking photos or petting my cat Wiki.
-      </h2>
-    </LeftSide>
-    <RightSide>
-      <Row>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/pilates.png" />
-        </ImageWrapper>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/read.png" />
-        </ImageWrapper>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/travel.png" />
-        </ImageWrapper>
-      </Row>
-      <Row>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/bake.png" />
-        </ImageWrapper>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/photo.png" />
-        </ImageWrapper>
-        <ImageWrapper>
-          <StaticImage alt="" src="../images/cat.png" />
-        </ImageWrapper>
-      </Row>
-    </RightSide>
-  </Container>
-)
+const Text = styled.h2`
+  color: ${props => props.theme.sectionTitleColor};
+  z-index: 3;
+`
+
+const Hobbies = () => {
+  const { isDark } = useStyledDarkMode()
+  return (
+    <Section id="hobbies">
+      <Overlay />
+      <Container>
+        <LeftSide>
+          <Text>
+            Out of the office you'll find me taking photos, reading, traveling,
+            petting my cat Wiki, doing pilates or baking.
+          </Text>
+        </LeftSide>
+        <RightSide>
+          <Row>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/flamingo.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/books.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/travel.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+          </Row>
+          <Row>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/cat.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/pilates.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+            <ImageWrapper>
+              <StaticImage
+                alt=""
+                src="../images/bake.png"
+                transformOptions={{
+                  grayscale: true,
+                }}
+              />
+            </ImageWrapper>
+          </Row>
+        </RightSide>
+      </Container>
+    </Section>
+  )
+}
 
 export default Hobbies
