@@ -1,32 +1,46 @@
-const { white, black, grayDark, pink } = require("./colors.ts")
+const { white, black, pink, blue } = require("./colors.ts")
 const styledComponents = require("styled-components")
 const { createGlobalStyle } = styledComponents
 
 const lightTheme = {
   backgroundColor: white,
-  primaryColor: grayDark,
-  accentColor: pink,
-  linkColor: grayDark,
-  linkHoverColor: grayDark,
+  sectionBackgroundColor: blue,
+  sectionTitleColor: white,
+  cardBackgroundColor: white,
+  heroSmallScreenTextColor: white,
+  heroSmallScreenTitleColor: white,
+  menuSmallScreenTextColor: white,
+  primaryColor: black,
+  accentColor: blue,
+  linkColor: black,
+  linkHoverColor: blue,
+  overlayColor: blue,
   darkModeSwitcher: {
     iconColor: black,
     backgroundColor: white,
-    backgroundHoverColor: pink,
+    backgroundHoverColor: blue,
     knobColor: black,
   },
   switcher: {
     backgroundColor: white,
-    backgroundHoverColor: pink,
+    backgroundHoverColor: blue,
     knobColor: black,
   },
 }
 
 const darkTheme = {
   backgroundColor: black,
+  sectionBackgroundColor: black,
+  sectionTitleColor: white,
+  cardBackgroundColor: black,
+  heroSmallScreenTextColor: white,
+  heroSmallScreenTitleColor: pink,
+  menuSmallScreenTextColor: white,
   primaryColor: white,
   accentColor: pink,
   linkColor: white,
-  linkHoverColor: white,
+  linkHoverColor: pink,
+  overlayColor: black,
   darkModeSwitcher: {
     iconColor: white,
     backgroundColor: black,

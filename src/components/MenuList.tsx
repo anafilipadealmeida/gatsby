@@ -24,8 +24,8 @@ const NavList = styled.ul<MenuListProps>`
     width: 100%;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    li {
-      color: ${props => props.theme.primaryColor};
+    li a {
+      color: ${props => props.theme.menuSmallScreenTextColor};
     }
   }
 `

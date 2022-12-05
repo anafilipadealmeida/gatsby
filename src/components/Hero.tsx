@@ -34,6 +34,7 @@ const Title = styled.h1`
 
   @media ${device.extraSmall} {
     font-size: 4rem;
+    color: ${props => props.theme.heroSmallScreenTitleColor};
   }
 `
 
@@ -41,6 +42,9 @@ const Description = styled.h3`
   text-transform: lowercase;
   font-weight: 300;
   font-size: 1.5rem;
+  @media ${device.extraSmall} {
+    color: ${props => props.theme.heroSmallScreenTextColor};
+  }
 `
 
 const Wrapper = styled.div`
@@ -62,6 +66,7 @@ const HelloText = styled.p`
 
   @media ${device.extraSmall} {
     font-size: 4rem;
+    color: ${props => props.theme.heroSmallScreenTextColor};
   }
 `
 
@@ -91,6 +96,11 @@ const SocialIcon = styled.a`
     color: ${props => props.theme.primaryColor};
     &:hover {
       color: ${props => props.theme.accentColor};
+    }
+  }
+  @media ${device.extraSmall} {
+    > * {
+      color: ${props => props.theme.heroSmallScreenTextColor};
     }
   }
 `

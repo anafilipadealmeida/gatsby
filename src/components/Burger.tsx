@@ -41,6 +41,8 @@ const BurgerLine = styled.div<BurgerProps>`
     transform: ${({ isMenuOpen }) =>
       isMenuOpen ? "rotate(-45deg)" : "rotate(0)"};
   }
+  @media ${device.extraSmall} {
+    background-color: ${({ isMenuOpen }) => isMenuOpen && "white"}
 `
 
 type BurgerProps = {
