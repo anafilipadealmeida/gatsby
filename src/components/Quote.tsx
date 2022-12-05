@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { useStyledDarkMode } from "gatsby-styled-components-dark-mode"
 
 const Container = styled.section`
   display: flex;
@@ -13,7 +14,7 @@ const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: ${props => props.theme.backgroundColor};
+  background: ${props => props.theme.overlayColor};
   opacity: 0.65;
   z-index: -1;
 `
@@ -28,26 +29,45 @@ const TitleWrapper = styled.div`
   padding: 8.75rem 0;
 `
 
-const Quote = () => (
-  <Container>
-    <StaticImage
-      alt=""
-      src="../images/tiles.jpeg"
-      style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        zIndex: "-1",
-      }}
-    />
-    <Overlay />
-    <TitleWrapper>
-      <Card>
-        <h2>"why was I born if i can't do what I want?"</h2>
-        <p>- Ana, 4 years old</p>
-      </Card>
-    </TitleWrapper>
-  </Container>
-)
+const Quote = () => {
+  const { isDark } = useStyledDarkMode()
+  return (
+    <Container>
+      {isDark ? (
+        <StaticImage
+          alt=""
+          src="../images/tiles.jpg"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            zIndex: "-1",
+          }}
+          transformOptions={{
+            grayscale: true,
+          }}
+        />
+      ) : (
+        <StaticImage
+          alt=""
+          src="../images/tiles.jpg"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            zIndex: "-1",
+          }}
+        />
+      )}
+      <Overlay />
+      <TitleWrapper>
+        <Card>
+          <h2>"why was I born if i can't do what I want?"</h2>
+          <p>- Ana, 4 years old</p>
+        </Card>
+      </TitleWrapper>
+    </Container>
+  )
+}
 
 export default Quote

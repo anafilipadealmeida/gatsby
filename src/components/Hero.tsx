@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { useStyledDarkMode } from "gatsby-styled-components-dark-mode"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { device } from "../styles/device"
@@ -98,8 +99,8 @@ const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: ${props => props.theme.backgroundColor};
-  opacity: 0.3;
+  background: ${props => props.theme.overlayColor};
+  opacity: 0.6;
   z-index: -1;
 
   @media ${device.extraSmall} {
@@ -107,45 +108,64 @@ const Overlay = styled.div`
   }
 `
 
-const Hero = () => (
-  <Wrapper>
-    <LeftSide id="Hero">
-      <TextContainer>
-        <HelloText>Hey, I am</HelloText>
-        <Title>Ana Filipa de Almeida</Title>
-        <Description>empowering engineering teams</Description>
-        <SocialIconsWrapper>
-          <SocialIcon
-            href="https://www.linkedin.com/in/anafilipadealmeida/"
-            aria-label="My Linkedin account"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </SocialIcon>
-          <SocialIcon
-            href="https://github.com/anafilipadealmeida"
-            aria-label="My Github account"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </SocialIcon>
-        </SocialIconsWrapper>
-      </TextContainer>
-    </LeftSide>
-    <RightSide>
-      <StaticImage
-        alt=""
-        src="../images/ana_portrait.jpg"
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          zIndex: "-1",
-        }}
-      />
-      <Overlay />
-    </RightSide>
-  </Wrapper>
-)
+const Hero = () => {
+  const { isDark } = useStyledDarkMode()
+  return (
+    <Wrapper>
+      <LeftSide id="Hero">
+        <TextContainer>
+          <HelloText>Hey, I am</HelloText>
+          <Title>Ana Filipa de Almeida</Title>
+          <Description>empowering engineering teams</Description>
+          <SocialIconsWrapper>
+            <SocialIcon
+              href="https://www.linkedin.com/in/anafilipadealmeida/"
+              aria-label="My Linkedin account"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </SocialIcon>
+            <SocialIcon
+              href="https://github.com/anafilipadealmeida"
+              aria-label="My Github account"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </SocialIcon>
+          </SocialIconsWrapper>
+        </TextContainer>
+      </LeftSide>
+      <RightSide>
+        {isDark ? (
+          <StaticImage
+            alt=""
+            src="../images/ana_portrait.jpg"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: "-1",
+            }}
+            transformOptions={{
+              grayscale: true,
+            }}
+          />
+        ) : (
+          <StaticImage
+            alt=""
+            src="../images/ana_portrait.jpg"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: "-1",
+            }}
+          />
+        )}
+        <Overlay />
+      </RightSide>
+    </Wrapper>
+  )
+}
 
 export default Hero

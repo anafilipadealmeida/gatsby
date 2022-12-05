@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import { useStyledDarkMode } from "gatsby-styled-components-dark-mode"
 import { device } from "../styles/device"
 
 const Container = styled.section`
@@ -11,6 +12,7 @@ const Container = styled.section`
 
 const Title = styled.h2`
   text-align: center;
+  padding-top: 5rem;
 `
 
 const ColumnTitle = styled.p`
@@ -47,38 +49,60 @@ const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: ${props => props.theme.backgroundColor};
+  background: ${props => props.theme.overlayColor};
   opacity: 0.65;
   z-index: -1;
 `
 
-const Values = () => (
-  <Container id="values">
-    <StaticImage
-      alt="tiles"
-      src="../images/tiles.jpeg"
-      style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        zIndex: "-1",
-      }}
-    />
-    <Overlay />
-    <ContentContainer>
+const Values = () => {
+  const { isDark } = useStyledDarkMode()
+  return (
+    <>
       <Title>Things I value</Title>
-      <Grid>
-        <ColumnTitle>Be bold</ColumnTitle>
-        <ColumnTitle>Default to action</ColumnTitle>
-        <ColumnTitle>Pursue the truth</ColumnTitle>
-        <ColumnTitle>Keep improving</ColumnTitle>
-        <ColumnTitle>Be transparent</ColumnTitle>
-        <ColumnTitle>Empathise with users</ColumnTitle>
-        <ColumnTitle>Empower others</ColumnTitle>
-        <ColumnTitle>Be kind & humble</ColumnTitle>
-      </Grid>
-    </ContentContainer>
-  </Container>
-)
+      <Container id="values">
+        {isDark ? (
+          <StaticImage
+            alt="tiles"
+            src="../images/tiles.jpg"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: "-1",
+            }}
+            transformOptions={{
+              grayscale: true,
+            }}
+          />
+        ) : (
+          <StaticImage
+            alt="tiles"
+            src="../images/tiles.jpg"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: "-1",
+            }}
+          />
+        )}
+
+        <Overlay />
+        <ContentContainer>
+          <Grid>
+            <ColumnTitle>Be bold</ColumnTitle>
+            <ColumnTitle>Default to action</ColumnTitle>
+            <ColumnTitle>Pursue the truth</ColumnTitle>
+            <ColumnTitle>Keep improving</ColumnTitle>
+            <ColumnTitle>Be transparent</ColumnTitle>
+            <ColumnTitle>Empathise with users</ColumnTitle>
+            <ColumnTitle>Empower others</ColumnTitle>
+            <ColumnTitle>Be kind & humble</ColumnTitle>
+          </Grid>
+        </ContentContainer>
+      </Container>
+    </>
+  )
+}
 
 export default Values
